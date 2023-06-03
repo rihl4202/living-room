@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:gray">
+
+    <a-camera wasd-controls-enabled="true" position="0 8 20"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets>      
+    <a-asset-item id="table-obj" src="./room_set/tinker.obj"></a-asset-item>
+    <a-asset-item id="mtl" src="./room_set/obj.mtl"></a-asset-item>
+
+    <a-asset-item id="beanbag-obj" src="./bean/tinker.obj"></a-asset-item>
+    <a-asset-item id="beanbag-mtl" src="./bean/obj.mtl"></a-asset-item>
+
+    <a-asset-item id="footrest-obj" src="./footrest/tinker.obj"></a-asset-item>
+    <a-asset-item id="footrest-mtl" src="./footrest/obj.mtl"></a-asset-item>
+
+    <a-asset-item id="lamp-obj" src="./lamp/tinker.obj"></a-asset-item>
+    <a-asset-item id="lamp-mtl" src="./lamp/obj.mtl"></a-asset-item>
+
+    <a-asset-item id="sofa-obj" src="./sofa/tinker.obj"></a-asset-item>
+    <a-asset-item id="sofa-mtl" src="./sofa/obj.mtl"></a-asset-item>
+      <!--Add Code Here-->
+
+    </a-assets>
+    
+    
+    <!--------------------------------------OBJ Models----------------------------------------------------------->   
+  
+    <!--Add code here-->
+      <a-entity obj-model="obj:#table-obj;mtl:#mtl" position="0 -0.76 -30" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
+
+      <a-entity obj-model="obj:#beanbag-obj;mtl:#beanbag-mtl" position="15 -0.76 -21" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
+
+      <a-entity obj-model="obj:#lamp-obj;mtl:#lamp-mtl" position="-24 -0.76 -30" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
+
+      <a-entity obj-model="obj:#sofa-obj;mtl:#sofa-mtl" position="-21 -0.76 -5" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
+
+      <a-entity obj-model="obj:#footrest-obj;mtl:#footrest-mtl" position="-7 -0.76 -6" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
+
+    <!-------------------------------------Circular Plane----------------------------------------------->
+    
+    <a-circle id="floor" position="-0.4 -0.76 -25" rotation="-90 0 0" radius="100" shadow="receive: true" visible="true"
+      color="white">
+    </a-circle>
+    
+  
+    <!-------------------------------------Room Walls----------------------------------------------->
+    <a-entity >
+
+      <!--BACK-->
+      <a-box color="blue" position="0.076 -4 -39" width="50" height="50">
+      </a-box>
+      <!--RIGHT-->
+      <a-box color="orange" rotation="0 -90 0" position="25.5 -2.9 -15" width="50" height="50">
+      </a-box>
+      <!--LEFT-->
+      <a-box color="orange" rotation="0 -90 0" position="-25.9 -3.4 -15" width="50" height="50">
+      </a-box>
+      <!--TOP-->
+      <a-box color="white" rotation="90 0 0" position="0 21.4 -15" width="50" height="50">
+      </a-box>
+
+    </a-entity>
+    
+  </a-scene>
+</body>
+
+</html>
